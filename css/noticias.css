@@ -104,6 +104,17 @@ h1 {
     display: flex;
     justify-content: center;
 }
+a {
+    color: #068372;
+    font-size: 30px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+} 
+a:hover{
+    color: #004f59;
+    transition: color 0.5s ease;
+}
 
 @media (max-width: 768px) {
     header {
