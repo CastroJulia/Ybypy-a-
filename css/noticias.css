@@ -89,8 +89,8 @@ main {
 }
 
 article {
-    background-color: #8edd65;
-    box-shadow: 1px 1px 2px #004f59;
+    background-color: #347d38a2;
+    box-shadow: 1px 1px 2px #1f4c21a2;
     padding: 20px;
     margin: 50px auto;
     width: 80%;
@@ -116,7 +116,7 @@ article img {
 }
 
 p {
-    color: #004f59;
+    color: #0d2f02;
     font-size: 20px;
     line-height: 2;
     text-align: justify;
@@ -134,13 +134,13 @@ footer {
 }
 
 b {
-    color: #01342d;
+    color: #035a11;
     text-align: center;
     font-size: 25px;
     line-height: 1.5;
 }
 h1 {
-    color: #01342d;
+    color: #035a11;
     font-size: 60px;
     line-height: 1.5;
     display: flex;
