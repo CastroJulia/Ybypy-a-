@@ -44,42 +44,73 @@ main {
 
 .navbar {
     position: relative;
-    width: 80%;             
+    width: 80%;   
     margin: 20px auto;    
     padding: 15px 20px;
     background-color: #0040a9;
     border-radius: 60px;
     backdrop-filter: blur(10px);
+    font-size: 16px;      
+    line-height: normal;  
     box-shadow: 0 4px 6px rgba(172, 248, 9, 0.1);
     border: 0.5px solid #273a59;
 }
 
 .navbar ul {
+    position: relative;
+    z-index: 1;               
     display: flex;
     justify-content: center;
-    align-items: center;      
+    align-items: center;
     gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
-    
 }
 
 .navbar a {
     display: block;
     padding: 10px 20px;
+    font-size: 16px;
+    line-height: normal;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     border-radius: 30px;
-    transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
+    background: none;       
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar a:hover,
 .navbar a.ativo {
-    background-color: #8edd65;
     color: #0040a9;
+}
+
+.navbar a:hover {
+    color: #0040a9;
+    transform: translateY(-2px);
+}
+
+.navbar:hover a.ativo:not(:hover) {
+    color: #fff;
+}
+
+.indicador {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: #8edd65;
+    border-radius: 30px;
+    box-shadow: 0 0 14px rgba(142, 221, 101, 0.6); 
+    transition: left 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
+                width 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
+                top 0.4s ease,
+                height 0.4s ease;
+    pointer-events: none;
 }
 
 article {
@@ -218,5 +249,19 @@ article a:hover {
 
     h1 {
         font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 95%;
+        border-radius: 30px;
+    }
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+    .navbar a {
+        padding: 8px 14px;
+        font-size: 14px;
     }
 }
