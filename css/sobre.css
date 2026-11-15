@@ -84,7 +84,7 @@ main {
 
 .navbar a:hover,
 .navbar a.ativo {
-    color: #0040a9;
+    color: #fff;
 }
 
 .navbar a:hover {
