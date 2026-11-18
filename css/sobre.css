@@ -146,6 +146,102 @@ p {
     line-height: 2;
 }
 
+ul {
+    color: #3a912f;
+    font-size: 18px;
+    line-height: 2;
+
+}
+.equipe {
+    background-color: #ffff;
+    box-shadow: 1px 1px 2px #e4dd0b;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipe:hover {
+    transform: translateY(-8px);
+    box-shadow: 2px 4px 8px #e4dd0b;
+}
+
+.saibamais {
+    background-color: #f6f9f2;
+    font-size: 20px;
+    box-shadow: 1px 1px 2px #3b623e;
+    color: #30472d;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saibamais:hover {
+    transform: translateY(-8px);
+    box-shadow: 2px 4px 8px #517854;
+}
+
+.formulario {
+    border-radius: 7px;
+    box-shadow: none;
+    background-color: #deeec9;
+    padding: 20px;
+    align-items: center;
+    font-size: 20px;
+    width: 80%;
+
+}
+
+.formulario:hover {
+    transform:none;
+    box-shadow: none;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #0e4d06;
+    
+}
+input.resp {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    display: block;
+}
+
+.botao {
+    background-color: #7ab05f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
 footer {
     background-color: #8edd65;
     color: white;
