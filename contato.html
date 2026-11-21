@@ -41,35 +41,36 @@
             <br><br>
             <article class="formulario">
                 <div>
-                    <form action="formulario.php" method="post" enctype="multipart/form-data">
+                    <form id="formContato" action="formulario.php" method="post" enctype="multipart/form-data">
                         <label>
-                        Seu nome: <br>
-                        <input class = "resp" type="text" name="Nvisitante" maxlength="80" size = "100px" placeholder="Ex: Maju" size="50px" required>
-                    </label>
-                    <br><br>
-                    <label>
-                        Email: <br>
-                        <input class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required>
-                    </label>
-                    <label class="check">
-                        <input type="checkbox" name="receberemails" value="sim">
-                        Quero receber emails.
-                    </label>
-                    <br><br><br>
-                    <label>
-                        Telefone: <br>
-                        <input class = "resp" type="tel" name="telefone" maxlength="15" size = "15px" placeholder="Ex: (11) 99999-9999" size="50px">
-                    </label>
-                    <br><br>
-                    <label>
-                        Mensagem: <br>
-                        <textarea class = "resp" name="mensagem" rows="5" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
-                    </label>
-                    <br><br>
-                    <input class = "botao" type="submit" value="Enviar">
+                            Seu nome: <br>
+                            <input class = "resp" type="text" name="Nvisitante" maxlength="80" size = "100px" placeholder="Ex: Maju" size="50px" required>
+                        </label>
+                        <br><br>
+                        <label>
+                            Email: <br>
+                            <input class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" name="receberemails" value="sim">
+                            Quero receber emails.
+                        </label>
+                        <br><br><br>
+                        <label>
+                            Telefone: <br>
+                            <input class = "resp" type="tel" name="telefone" maxlength="15" size = "15px" placeholder="Ex: (11) 99999-9999" size="50px">
+                        </label>
+                        <br><br>
+                        <label>
+                            Mensagem: <br>
+                            <textarea class = "resp" name="mensagem" rows="5" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
+                        </label>
+                        <br><br>
+                        <input class = "botao" type="submit" value="Enviar">
+                    </form>
                 </div>
-                </article>
             </article>
+        </article>
             <br>
         <h1>Conheça a equipe Yby Py'a</h1>
         <article class="equipe">
@@ -87,12 +88,18 @@
                 </p>
             </div>
         </article>
+        <dialog id="myModal">
+            <h2>Formulário enviado!</h2>
+            <p>Obrigado por participar do Yby Py'a. Em breve você receberá novidades sobre o projeto!.</p>
+            <button id="closeModal" type="button">Fechar</button>
+        </dialog>
     </main>
     <footer>
         <p>
             © 2026 | Todos os direitos reservados.
         </p>
     </footer>
+    <script src = "JS/modal.js"></script>
     <script src="JS/navbar.js"></script>
 </body>
 </html>
