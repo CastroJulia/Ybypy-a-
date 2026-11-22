@@ -10,63 +10,63 @@
 <body>
     <header>
          
-            <img src="img/logo.png" alt="..." class="logo">
+            <img src="img/logo.png" alt="Logotipo do projeto Yby Py'a" class="logo">
          
          
-         <img src="img/slogan.png" alt="..." class="slogan">
+         <img src="img/slogan.png" alt="Slogan do projeto Yby Py'a" class="slogan">
     </header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html" >Sobre</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="impacto.html">Impacto</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="noticias.html" >Notícias</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="curiosidades.html">Curiosidades</a></li>
                 <li><a href="guias.html">Guias</a></li>
                 <li><a href="localizacao.html">Locais</a></li>
                 <li><a href="contato.html">Saiba mais</a></li>
-                <li><a href="orçamento.html"  >Orçamento</a></li>
+                <li><a href="orcamento.html">Orçamento</a></li>
             </ul>
             <div class="indicador"></div>
         </nav>
     <main>
          <h1>Saiba mais sobre o projeto!</h1>
-        <article class = "saibamais">
+        <article class="saibamais">
             <div>
                 <p>
                 Para saber mais sobre o projeto Yby Py'a, você pode preencher o formulário de contato e ter acesso a conteúdos exclusivos, atualizações sobre as ações do projeto e poderá compartilhar suas ideias e sugestões para contribuir com a causa ambiental. A equipe do Yby Py'a valoriza a participação da comunidade e acredita que a troca de informações e experiências é fundamental para promover mudanças significativas na forma como lidamos com os recursos naturais e o meio ambiente.
                 </p>
             </div>
             <br><br>
-            <article class="formulario">
+            <article class="formulario contato">
                 <div>
-                    <form id="formContato" action="formulario.php" method="post" enctype="multipart/form-data">
-                        <label>
+                    <form id="formContato" class="contato" action="formulario.php" method="post" enctype="multipart/form-data">
+                        <label for="nome">
                             Seu nome: <br>
-                            <input class = "resp" type="text" name="Nvisitante" maxlength="80" size = "100px" placeholder="Ex: Maju" size="50px" required>
+                            <input id="nome" class="resp" type="text" name="Nvisitante" maxlength="80" placeholder="Ex: Maju" required aria-required="true">
                         </label>
                         <br><br>
-                        <label>
+                        <label for="email">
                             Email: <br>
-                            <input class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required>
+                            <input id="email" class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required aria-required="true">
                         </label>
-                        <label class="check">
-                            <input type="checkbox" name="receberemails" value="sim">
+                        <label class="check" for="receberemails">
+                            <input id="receberemails" type="checkbox" name="receberemails" value="sim">
                             Quero receber emails.
                         </label>
                         <br><br><br>
-                        <label>
+                        <label for="telefone">
                             Telefone: <br>
-                            <input class = "resp" type="tel" name="telefone" maxlength="15" size = "15px" placeholder="Ex: (11) 99999-9999" size="50px">
+                            <input id="telefone" class="resp" type="tel" name="telefone" maxlength="15" placeholder="Ex: (11) 99999-9999">
                         </label>
                         <br><br>
-                        <label>
+                        <label for="mensagem">
                             Mensagem: <br>
-                            <textarea class = "resp" name="mensagem" rows="5" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
+                            <textarea id="mensagem" class="resp" name="mensagem" rows="5" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
                         </label>
                         <br><br>
-                        <input class = "botao" type="submit" value="Enviar">
+                        <input class="botao" type="submit" value="Enviar">
                     </form>
                 </div>
             </article>
@@ -80,16 +80,16 @@
                     <br><br>
                     A equipe do Yby Py'a acredita que a educação ambiental é fundamental para a construção de um futuro mais sustentável e equilibrado, e trabalha para disseminar informações e práticas que incentivem a preservação dos recursos naturais e a redução do consumo de matérias-primas. Com criatividade, inovação e dedicação, a equipe busca engajar a comunidade em ações que promovam a conscientização ambiental e o desenvolvimento de hábitos mais responsáveis em relação ao meio ambiente.
                     <br>
-                     Entre em contato direto conosco por meio dos e-mails: <br>
-                    <ul>
-                        <li> Julia Castro:  julia@ybypya.com.br </li>
-                        <li> Maria Clara de Almeida:  maria@ybypya.com.br </li>
-                    </ul>
+                     Entre em contato direto conosco por meio dos e-mails:
                 </p>
+                <ul>
+                    <li> Julia Castro:  julia@ybypya.com.br </li>
+                    <li> Maria Clara de Almeida:  maria@ybypya.com.br </li>
+                </ul>
             </div>
         </article>
-        <dialog id="myModal">
-            <h2>Formulário enviado!</h2>
+        <dialog id="myModal" aria-modal="true" aria-labelledby="modalTitle">
+            <h2 id="modalTitle">Formulário enviado!</h2>
             <p>Obrigado por participar do Yby Py'a. Em breve você receberá novidades sobre o projeto!.</p>
             <button id="closeModal" type="button">Fechar</button>
         </dialog>
@@ -99,7 +99,7 @@
             © 2026 | Todos os direitos reservados.
         </p>
     </footer>
-    <script src = "JS/modal.js"></script>
-    <script src="JS/navbar.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

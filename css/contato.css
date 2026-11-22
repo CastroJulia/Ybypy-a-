@@ -2,55 +2,65 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: white;
+    color: #30472d;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
 header {
     background-color: #8edd65;
     text-align: center;
-    padding: 20px;
+    padding: 1.25rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 
 .logo {
-    width: 250px;
+    width: 15.625rem;
     max-width: 100%;
-    height: 100px;
+    height: 6.25rem;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 0.375rem;
     grid-column: 1;
     justify-self: start;
 }
 
 .slogan {
-    width: 250px;
+    width: 15.625rem;
     max-width: 100%;
-    height: 110px;
+    height: 6.875rem;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 0.375rem;
     grid-column: 2;
     justify-self: center;
 }
 
-main {
-    padding: 40px;
-}
-
+/* ==========================================================================
+   NAVEGAÇÃO (.navbar)
+   ========================================================================== */
 .navbar {
     position: relative;
     width: 80%;   
-    margin: 20px auto;    
-    padding: 15px 20px;
+    margin: 1.25rem auto;    
+    padding: 0.9375rem 1.25rem;
     background-color: #0040a9;
-    border-radius: 60px;
+    border-radius: 3.75rem;
     backdrop-filter: blur(10px);
-    font-size: 16px;      
+    font-size: 1rem;      
     line-height: normal;  
     box-shadow: 0 4px 6px rgba(172, 248, 9, 0.1);
     border: 0.5px solid #273a59;
@@ -62,7 +72,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -70,13 +80,13 @@ main {
 
 .navbar a {
     display: block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
     line-height: normal;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     text-align: center;
     background: none;       
     transition: color 0.3s ease, transform 0.3s ease;
@@ -104,7 +114,7 @@ main {
     width: 0;
     height: 0;
     background-color: #8edd65;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     box-shadow: 0 0 14px rgba(142, 221, 101, 0.6); 
     transition: left 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
                 width 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
@@ -113,48 +123,62 @@ main {
     pointer-events: none;
 }
 
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL E TIPOGRAFIA (UNIDADES RELATIVAS REM/EM)
+   ========================================================================== */
+main {
+    padding: 2.5rem;
+}
+
+h1 {
+    color: #0040a9;
+    font-size: 3.5rem;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #0040a9;
+}
+
 p {
     color: #3a912f;
-    font-size: 20px;
-    line-height: 2;
+    font-size: 1.25rem;
+    line-height: 1.8;
 }
 
 ul {
     color: #3a912f;
-    font-size: 18px;
-    line-height: 2;
-
-}
-.equipe {
-    background-color: #ffff;
-    box-shadow: 1px 1px 2px #e4dd0b;
-    padding: 20px;
-    margin: 50px auto;
-    width: 80%;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.125rem;
+    line-height: 1.8;
 }
 
-.equipe:hover {
-    transform: translateY(-8px);
-    box-shadow: 2px 4px 8px #e4dd0b;
+b {
+    color: #0040a9;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 
+/* ==========================================================================
+   SEÇÕES E CARDS (.saibamais, .equipe)
+   ========================================================================== */
 .saibamais {
     background-color: #f6f9f2;
-    font-size: 20px;
+    font-size: 1.25rem;
     box-shadow: 1px 1px 2px #3b623e;
     color: #30472d;
-    padding: 20px;
-    margin: 50px auto;
+    padding: 1.25rem;
+    margin: 3.125rem auto;
     width: 80%;
     display: flex;
-    gap: 30px;
+    gap: 1.875rem;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -163,65 +187,108 @@ ul {
     box-shadow: 2px 4px 8px #517854;
 }
 
-.formulario {
-    border-radius: 7px;
-    box-shadow: none;
-    background-color: #deeec9;
-    padding: 20px;
-    align-items: center;
-    font-size: 20px;
+.equipe {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px #e4dd0b;
+    padding: 1.25rem;
+    margin: 3.125rem auto;
     width: 80%;
-
+    display: flex;
+    gap: 1.875rem;
+    align-items: center;
+    border-radius: 0.625rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.formulario:hover {
-    transform:none;
-    box-shadow: none;
+.equipe:hover {
+    transform: translateY(-8px);
+    box-shadow: 2px 4px 8px #e4dd0b;
+}
 
+/* ==========================================================================
+   FORMULÁRIO (.formulario, .contato)
+   ========================================================================== */
+.formulario,
+.contato {
+    border-radius: 0.4375rem;
+    box-shadow: none;
+    background-color: #deeec9;
+    padding: 1.25rem;
+    align-items: center;
+    font-size: 1.25rem;
+    width: 80%;
+}
+
+.formulario:hover,
+.contato:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 0.625rem;
+    font-size: 1.125rem;
     color: #0e4d06;
-    
 }
-input.resp {
+
+input.resp,
+textarea.resp,
+.resp {
     width: 80%;
-    padding: 8px;
+    padding: 0.5rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 0.25rem;
+    font-size: 1rem;
     display: block;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+textarea.resp {
+    resize: vertical;
 }
 
 .botao {
     background-color: #7ab05f;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.3125rem;
     cursor: pointer;
     display: block;
     margin: 0 auto;
-
+    transition: background-color 0.3s ease;
 }
 
+.botao:hover {
+    background-color: #63924c;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+    font-size: 1.125rem;
+}
+
+/* ==========================================================================
+   MODAL / DIALOG
+   ========================================================================== */
 dialog {
-  border: none;
-  border-radius: 8px;
-  padding: 24px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    max-width: 25rem;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
-
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
 }
 
 #myModal {
@@ -230,125 +297,289 @@ dialog::backdrop {
 
 #myModal button {
     display: block;
-    margin: 20px auto 0;
-    padding: 8px 24px;
+    margin: 1.25rem auto 0;
+    padding: 0.5rem 1.5rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background-color: #3a9a3a;
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #myModal button:hover {
     background-color: #2d7a2d;
 }
 
-.check {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-}
-
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
 footer {
     background-color: #8edd65;
     color: white;
     align-items: center;
     justify-content: center;
     display: flex;
-    min-height: 50px;
-    padding: 10px;
+    min-height: 3.125rem;
+    padding: 0.625rem;
     text-align: center;
+    font-size: 1rem;
 }
 
-b {
-    color: #0040a9;
-    text-align: center;
-    font-size: 25px;
-    line-height: 1.5;
-}
-h1 {
-    color: #0040a9;
-    font-size: 60px;
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-}
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE COMPLETA)
+   ========================================================================== */
 
-@media (max-width: 768px) {
-    header {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .logo {
-        grid-column: 1;
-        justify-self: center;
-    }
-
-    .slogan {
-        grid-column: 2;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    article {
-        width: 100%;
-        margin: 25px auto;
-        gap: 20px;
-    }
-
-    article img {
-        width: 35%;
-    }
-}
-
-@media (max-width: 480px) {
+/* 1. CELULAR (MÁXIMO 600px) */
+@media (max-width: 600px) {
     header {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1rem;
     }
 
     .logo,
     .slogan {
         grid-column: 1;
         justify-self: center;
-    }
-
-    article {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 15px;
-    }
-
-    article img {
-        width: 100%;
+        max-width: 12.5rem;
         height: auto;
-        max-height: 220px;
+    }
+
+    main {
+        padding: 1.25rem 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        margin: 1rem 0;
+    }
+
+    h2 {
+        font-size: 1.35rem;
     }
 
     p {
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
-    b {
-        font-size: 21px;
+    ul {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        padding-left: 1.25rem;
+    }
+
+    /* Menu Flexível para Telas Pequenas sem rolagem horizontal */
+    .navbar {
+        width: 100%;
+        margin: 0.75rem auto;
+        padding: 0.625rem 0.5rem;
+        border-radius: 1.25rem;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.375rem;
+        width: 100%;
+    }
+
+    .navbar li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .navbar a {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.8125rem;
+        border-radius: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .indicador {
+        display: none; /* Ocultado em mobile com wrap para evitar sobreposição */
+    }
+
+    /* Cards e Containers */
+    .saibamais,
+    .equipe,
+    article {
+        width: 100%;
+        margin: 1.5rem auto;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    /* Formulário (.contato / .formulario) e inputs a 100% no Mobile */
+    .formulario,
+    .contato,
+    form#formContato {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    input.resp,
+    textarea.resp,
+    .resp,
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form textarea {
+        width: 100%;
+        padding: 0.625rem;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    .botao {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 768px) {
+/* 2. TABLET (601px A 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .logo {
+        grid-column: 1;
+        justify-self: center;
+        max-width: 13.75rem;
+        height: auto;
+    }
+
+    .slogan {
+        grid-column: 2;
+        justify-self: center;
+        max-width: 13.75rem;
+        height: auto;
+    }
+
+    main {
+        padding: 1.875rem 1.25rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+    }
+
+    ul {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
     .navbar {
-        width: 95%;
-        border-radius: 30px;
+        width: 92%;
+        padding: 0.75rem 1rem;
+        border-radius: 2rem;
     }
+
     .navbar ul {
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
     }
+
     .navbar a {
-        padding: 8px 14px;
-        font-size: 14px;
+        padding: 0.5rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .saibamais,
+    .equipe {
+        width: 90%;
+        padding: 1.25rem;
+        margin: 2rem auto;
+    }
+
+    .formulario,
+    .contato {
+        width: 90%;
+        padding: 1.25rem;
+    }
+
+    input.resp,
+    textarea.resp,
+    .resp {
+        width: 90%;
+    }
+}
+
+/* 3. DESKTOP (ACIMA DE 1024px) */
+@media (min-width: 1025px) {
+    header {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1.25rem 2.5rem;
+    }
+
+    .logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .slogan {
+        grid-column: 2;
+        justify-self: center;
+    }
+
+    main {
+        padding: 2.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .navbar {
+        width: 80%;
+        max-width: 75rem;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0.625rem;
+    }
+
+    .navbar a {
+        padding: 0.625rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .saibamais,
+    .equipe,
+    .formulario,
+    .contato {
+        width: 80%;
+        max-width: 68.75rem;
+    }
+
+    input.resp,
+    textarea.resp,
+    .resp {
+        width: 80%;
     }
 }
