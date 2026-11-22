@@ -2,7 +2,7 @@ const nav = document.querySelector('.navbar');
 const links = document.querySelectorAll('.navbar a');
 const indicador = document.querySelector('.indicador');
 
-const paginaAtual = location.pathname.split('/').pop() || 'home.html';
+const paginaAtual = location.pathname.split('/').pop() || 'index.html';
 const ativo = [...links].find(l => l.getAttribute('href') === paginaAtual) || links[0];
 ativo.classList.add('ativo');
 
