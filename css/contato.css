@@ -55,12 +55,35 @@ header {
 .navbar {
     position: relative;
     width: 80%;   
-    margin: 1.25rem auto;    
-    padding: 0.9375rem 1.25rem;
+    margin: 20px auto;    
+    padding: 15px 20px;
     background-color: #0040a9;
-    border-radius: 3.75rem;
+    border-radius: 60px;
     backdrop-filter: blur(10px);
-    font-size: 1rem;      
+    box-shadow: 0 4px 6px rgba(172, 248, 9, 0.1);
+    border: 0.5px solid #273a59;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+navbar {
+    position: relative;
+    width: 80%;   
+    margin: 20px auto;    
+    padding: 15px 20px;
+    background-color: #0040a9;
+    border-radius: 60px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;      
     line-height: normal;  
     box-shadow: 0 4px 6px rgba(172, 248, 9, 0.1);
     border: 0.5px solid #273a59;
@@ -72,7 +95,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.625rem;
+    gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -80,13 +103,13 @@ header {
 
 .navbar a {
     display: block;
-    padding: 0.625rem 1.25rem;
-    font-size: 1rem;
+    padding: 10px 20px;
+    font-size: 16px;
     line-height: normal;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    border-radius: 1.875rem;
+    border-radius: 30px;
     text-align: center;
     background: none;       
     transition: color 0.3s ease, transform 0.3s ease;
@@ -94,7 +117,7 @@ header {
 
 .navbar a:hover,
 .navbar a.ativo {
-    color: #fff;
+    color: #0040a9;
 }
 
 .navbar a:hover {
@@ -114,7 +137,7 @@ header {
     width: 0;
     height: 0;
     background-color: #8edd65;
-    border-radius: 1.875rem;
+    border-radius: 30px;
     box-shadow: 0 0 14px rgba(142, 221, 101, 0.6); 
     transition: left 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
                 width 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
@@ -122,7 +145,6 @@ header {
                 height 0.4s ease;
     pointer-events: none;
 }
-
 /* ==========================================================================
    CONTEÚDO PRINCIPAL E TIPOGRAFIA (UNIDADES RELATIVAS REM/EM)
    ========================================================================== */
