@@ -198,8 +198,9 @@ b {
     margin: 3.125rem auto;
     width: 80%;
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
     gap: 1.875rem;
-    align-items: center;
     border-radius: 0.625rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -235,10 +236,12 @@ b {
     border-radius: 0.4375rem;
     box-shadow: none;
     background-color: #deeec9;
-    padding: 1.25rem;
+    padding: 2rem;
     align-items: center;
     font-size: 1.25rem;
-    width: 80%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .formulario:hover,
@@ -257,7 +260,7 @@ label {
 input.resp,
 textarea.resp,
 .resp {
-    width: 80%;
+    width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
@@ -592,16 +595,22 @@ footer {
     }
 
     .saibamais,
-    .equipe,
-    .formulario,
-    .contato {
+    .equipe {
         width: 80%;
         max-width: 68.75rem;
+    }
+
+    .formulario,
+    .contato {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
     }
 
     input.resp,
     textarea.resp,
     .resp {
-        width: 80%;
+        width: 100%;
     }
 }
