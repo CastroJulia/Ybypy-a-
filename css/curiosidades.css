@@ -1,21 +1,79 @@
-* {
+/* ==========================================================================
+   YBY PY'A - FOLHA DE ESTILOS DE CURIOSIDADES E MULTIMÍDIA
+   Identidade Visual: Verde (#8edd65, #01342d), Azul (#0040a9, #004f59) e Amarelo (#f4d03f)
+   Acessibilidade: WCAG 2.1 AA | Responsividade Completa (Mobile First / Fluido)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. RESET E CONFIGURAÇÕES GLOBAIS
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fbfdf9;
+    color: #273a59;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* Link de Salto para Acessibilidade por Teclado (WCAG 2.4.1) */
+.link-pular {
+    position: absolute;
+    top: -9999px;
+    left: 10px;
+    background-color: #0040a9;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 0 0 8px 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: top 0.2s ease-in-out;
+}
+
+.link-pular:focus {
+    top: 0;
+    outline: 3px solid #f4d03f;
+    outline-offset: 2px;
+}
+
+/* Indicadores de Foco Visível para Navegação por Teclado (WCAG 2.4.7) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+video:focus-visible,
+audio:focus-visible,
+iframe:focus-visible {
+    outline: 3px solid #0040a9;
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   2. CABEÇALHO (HEADER) E IDENTIDADE VISUAL
+   -------------------------------------------------------------------------- */
 header {
     background-color: #8edd65;
     text-align: center;
-    padding: 20px;
+    padding: 18px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 64, 169, 0.1);
 }
 
 .logo {
@@ -38,51 +96,48 @@ header {
     justify-self: center;
 }
 
-main {
-    padding: 40px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: #3e5824;
-}
-
+/* --------------------------------------------------------------------------
+   3. NAVEGAÇÃO PRINCIPAL (.navbar)
+   -------------------------------------------------------------------------- */
 .navbar {
     position: relative;
-    width: 80%;   
-    margin: 20px auto;    
-    padding: 15px 20px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 12px 20px;
     background-color: #0040a9;
     border-radius: 60px;
     backdrop-filter: blur(10px);
-    font-size: 16px;      
-    line-height: normal;  
-    box-shadow: 0 4px 6px rgba(172, 248, 9, 0.1);
+    font-size: 16px;
+    line-height: normal;
+    box-shadow: 0 4px 12px rgba(0, 64, 169, 0.2);
     border: 0.5px solid #273a59;
 }
 
 .navbar ul {
     position: relative;
-    z-index: 1;               
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .navbar a {
     display: block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 18px;
+    font-size: 15px;
     line-height: normal;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 30px;
     text-align: center;
-    background: none;       
+    background: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -92,12 +147,11 @@ main {
 }
 
 .navbar a:hover {
-    color: #0040a9;
     transform: translateY(-2px);
 }
 
 .navbar:hover a.ativo:not(:hover) {
-    color: #fff;
+    color: #ffffff;
 }
 
 .indicador {
@@ -109,7 +163,7 @@ main {
     height: 0;
     background-color: #8edd65;
     border-radius: 30px;
-    box-shadow: 0 0 14px rgba(142, 221, 101, 0.6); 
+    box-shadow: 0 0 14px rgba(142, 221, 101, 0.6);
     transition: left 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
                 width 0.4s cubic-bezier(0.68, -0.25, 0.27, 1.25),
                 top 0.4s ease,
@@ -117,149 +171,606 @@ main {
     pointer-events: none;
 }
 
-article {
-    background-color: hsla(186, 100%, 33%, 0.564);
-    box-shadow: 1px 1px 2px #004f59;
-    padding: 20px;
-    margin: 50px auto;
-    width: 80%;
-    display: flex;
+/* --------------------------------------------------------------------------
+   4. CONTEÚDO PRINCIPAL E TIPOGRAFIA
+   -------------------------------------------------------------------------- */
+main {
+    padding: 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.pagina-cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #01342d;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+}
+
+.subtitulo-pagina {
+    font-size: 1.2rem;
+    color: #004f59;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.secao-cabecalho {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge-secao {
+    display: inline-block;
+    background-color: #e8f8e0;
+    color: #1e5e1a;
+    border: 1px solid #8edd65;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.secao-cabecalho h2 {
+    color: #01342d;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 6px 0 12px 0;
+}
+
+.secao-descricao {
+    font-size: 1.1rem;
+    color: #004f59;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. SEÇÃO MULTIMÍDIA E GRID RESPONSIVO
+   -------------------------------------------------------------------------- */
+.secao-multimidia {
+    background: linear-gradient(180deg, #ffffff 0%, #f4fbf0 100%);
+    border: 2px solid #8edd65;
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 6px 20px rgba(0, 64, 169, 0.06);
+}
+
+.multimidia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    align-items: center;
-    border-radius: 10px;
+    align-items: stretch;
+}
+
+/* Card Multimídia */
+.midia-card {
+    background-color: #ffffff;
+    border: 1.5px solid #d7eed3;
+    border-top: 6px solid #8edd65;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 4px 14px rgba(0, 79, 89, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-article:hover {
-    transform: translateY(-8px);
-    box-shadow: 2px 4px 8px #004f59;
+.midia-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 64, 169, 0.14);
 }
 
-article img {
-    width: 250px;
+.card-video {
+    border-top-color: #8edd65; /* Verde Yby Py'a */
+}
+
+.card-audio {
+    border-top-color: #f4d03f; /* Amarelo Sustentável */
+}
+
+.card-iframe {
+    border-top-color: #0040a9; /* Azul Institucional */
+}
+
+/* Tags de identificação dos tipos de mídia */
+.tag-midia {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+}
+
+.tag-verde {
+    background-color: #e8f8e0;
+    color: #1e5e1a;
+    border: 1px solid #8edd65;
+}
+
+.tag-amarelo {
+    background-color: #fef9e7;
+    color: #8a6d05;
+    border: 1px solid #f4d03f;
+}
+
+.tag-azul {
+    background-color: #e6f0fa;
+    color: #0040a9;
+    border: 1px solid #0040a9;
+}
+
+.midia-card-header h3 {
+    color: #01342d;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 4px 0 8px 0;
+    line-height: 1.3;
+}
+
+.midia-card-header p {
+    font-size: 0.98rem;
+    color: #3e5824;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. CONTÊINERES RESPONSIVOS DE VÍDEO, ÁUDIO E IFRAME (PROPORÇÃO 16:9)
+   -------------------------------------------------------------------------- */
+
+/* Contêiner Proporcional 16:9 para Vídeo e Iframe */
+.video-container,
+.iframe-container {
+    position: relative;
+    width: 100%;
     max-width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin: 16px auto;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: #01342d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 79, 89, 0.2);
 }
 
-p {
+/* Suporte de fallback para navegadores antigos sem aspect-ratio nativo */
+@supports not (aspect-ratio: 16 / 9) {
+    .video-container,
+    .iframe-container {
+        padding-top: 56.25%; /* 16:9 */
+        height: 0;
+    }
+    .video-container video,
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Regras de Vídeo 100% Responsivo */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+    background-color: #000000;
+}
+
+/* Regras de Iframe 100% Responsivo */
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    border: 0;
+}
+
+/* Contêiner Responsivo para Áudio */
+.audio-container {
+    width: 100%;
+    max-width: 100%;
+    background: linear-gradient(135deg, #f7faf5 0%, #edf7e7 100%);
+    border: 2px solid #8edd65;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    min-height: 190px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.audio-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.audio-icone {
+    font-size: 2rem;
+}
+
+.audio-barras {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+}
+
+.audio-barras span {
+    display: inline-block;
+    width: 4px;
+    background-color: #0040a9;
+    border-radius: 2px;
+    animation: pulsarOnda 1.4s ease-in-out infinite alternate;
+}
+
+.audio-barras span:nth-child(1) { height: 12px; animation-delay: 0.1s; }
+.audio-barras span:nth-child(2) { height: 24px; animation-delay: 0.3s; }
+.audio-barras span:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+.audio-barras span:nth-child(4) { height: 28px; animation-delay: 0.4s; }
+.audio-barras span:nth-child(5) { height: 14px; animation-delay: 0.15s; }
+.audio-barras span:nth-child(6) { height: 20px; animation-delay: 0.25s; }
+
+@keyframes pulsarOnda {
+    0% { transform: scaleY(0.4); background-color: #0040a9; }
+    50% { background-color: #8edd65; }
+    100% { transform: scaleY(1); background-color: #f4d03f; }
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    display: block;
+    border-radius: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   7. RECURSOS DE ACESSIBILIDADE (WCAG 2.1)
+   -------------------------------------------------------------------------- */
+.midia-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.dica-acessibilidade {
+    font-size: 0.85rem;
+    color: #273a59;
+    background-color: #f0f4f8;
+    border-left: 3px solid #0040a9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+kbd {
+    background-color: #ffffff;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0040a9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Transcrições Textuais Acessíveis (<details>) */
+.transcricao {
+    border: 1px solid #cde4ce;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.transcricao summary {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0040a9;
+    background-color: #f2f9ef;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.transcricao summary:hover,
+.transcricao summary:focus-visible {
+    background-color: #e2f4dc;
+    color: #01342d;
+}
+
+.transcricao-conteudo {
+    padding: 14px;
+    font-size: 0.92rem;
+    line-height: 1.6;
     color: #004f59;
-    font-size: 20px;
-    line-height: 2;
+    border-top: 1px solid #e1efe2;
+    background-color: #fdfdfd;
+}
+
+.transcricao-conteudo p {
+    margin: 0;
     text-align: justify;
 }
 
+/* --------------------------------------------------------------------------
+   8. SEÇÃO DE CURIOSIDADES EM TEXTO E IMAGEM
+   -------------------------------------------------------------------------- */
+.secao-curiosidades {
+    margin-top: 60px;
+}
+
+.curiosidade-item {
+    background-color: rgba(0, 79, 89, 0.08);
+    border: 1.5px solid #004f59;
+    box-shadow: 0 4px 12px rgba(0, 79, 89, 0.1);
+    padding: 28px;
+    margin: 35px auto;
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curiosidade-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 79, 89, 0.2);
+}
+
+.curiosidade-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.curiosidade-texto h3 {
+    color: #01342d;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.curiosidade-texto p {
+    color: #004f59;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+}
+
+.curiosidade-img-wrap {
+    flex-shrink: 0;
+    width: 260px;
+}
+
+.curiosidade-img-wrap img {
+    width: 100%;
+    max-width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #0040a9;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 64, 169, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #01342d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(1, 52, 45, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   9. RODAPÉ (FOOTER)
+   -------------------------------------------------------------------------- */
 footer {
     background-color: #8edd65;
-    color: white;
+    color: #01342d;
     align-items: center;
     justify-content: center;
     display: flex;
-    min-height: 50px;
-    padding: 10px;
+    min-height: 60px;
+    padding: 16px 20px;
     text-align: center;
+    font-weight: 600;
+    box-shadow: 0 -2px 8px rgba(0, 64, 169, 0.08);
 }
 
-b {
-    color: #01342d;
-    text-align: center;
-    font-size: 25px;
-    line-height: 1.5;
-}
-h1 {
-    color: #01342d;
-    font-size: 60px;
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-}
-article a {
-    color: #068372;
-    font-size: 30px;
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-}
-article a:hover {
-    color: #004f59;
-    transition: color 0.5s ease;
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
 }
 
+/* --------------------------------------------------------------------------
+   10. RESPONSIVIDADE E MEDIA QUERIES (TABLETS E SMARTPHONES)
+   -------------------------------------------------------------------------- */
+
+/* Telas Médias / Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .secao-cabecalho h2 {
+        font-size: 1.8rem;
+    }
+
+    .curiosidade-item {
+        width: 95%;
+        padding: 22px;
+        gap: 20px;
+    }
+
+    .curiosidade-img-wrap {
+        width: 220px;
+    }
+
+    .curiosidade-img-wrap img {
+        height: 150px;
+    }
+}
+
+/* Telas Pequenas / Tablets menores e Smartphones em Paisagem (max-width: 768px) */
 @media (max-width: 768px) {
     header {
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 12px;
+        padding: 14px;
     }
 
     .logo {
         grid-column: 1;
         justify-self: center;
+        height: 80px;
     }
 
     .slogan {
         grid-column: 2;
+        justify-self: center;
+        height: 80px;
+    }
+
+    .navbar {
+        width: 95%;
+        border-radius: 30px;
+        padding: 10px 14px;
+    }
+
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 14px;
     }
 
     main {
+        padding: 25px 14px;
+    }
+
+    .secao-multimidia {
+        padding: 25px 16px;
+        border-radius: 14px;
+    }
+
+    .multimidia-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .curiosidade-item {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        width: 100%;
+        margin: 24px auto;
         padding: 20px;
     }
 
-    article {
+    .curiosidade-img-wrap {
         width: 100%;
-        margin: 25px auto;
-        gap: 20px;
     }
 
-    article img {
-        width: 35%;
+    .curiosidade-img-wrap img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .curiosidade-texto p {
+        font-size: 1rem;
+        text-align: left;
     }
 }
 
+/* Smartphones / Telas Estreitas (max-width: 480px) */
 @media (max-width: 480px) {
     header {
         grid-template-columns: 1fr;
+        padding: 12px;
     }
 
     .logo,
     .slogan {
         grid-column: 1;
         justify-self: center;
+        height: 70px;
     }
 
-    article {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 15px;
+    h1 {
+        font-size: 2rem;
     }
 
-    article img {
+    .subtitulo-pagina {
+        font-size: 1rem;
+    }
+
+    .secao-cabecalho h2 {
+        font-size: 1.5rem;
+    }
+
+    .secao-descricao {
+        font-size: 0.95rem;
+    }
+
+    .midia-card {
+        padding: 16px;
+    }
+
+    .midia-card-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .curiosidade-texto h3 {
+        font-size: 1.25rem;
+    }
+
+    .curiosidade-item {
+        padding: 16px;
+    }
+
+    .btn-saiba-mais {
         width: 100%;
-        height: auto;
-        max-height: 220px;
-    }
-
-    p {
-        font-size: 17px;
-        line-height: 1.7;
-    }
-
-    b {
-        font-size: 21px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        width: 95%;
-        border-radius: 30px;
-    }
-    .navbar ul {
-        flex-wrap: wrap;
-    }
-    .navbar a {
-        padding: 8px 14px;
-        font-size: 14px;
+        text-align: center;
+        padding: 12px 16px;
     }
 }

@@ -3,93 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosidades</title>
+    <title>Curiosidades e Multimídia - Yby Py'a</title>
     <link rel="stylesheet" href="css/curiosidades.css">
     <link rel="icon" href="img/logo.png">
 </head>
 <body>
-     <header>
-         
-            <img src="img/logo.png" alt="..." class="logo">
-         
-         
-         <img src="img/slogan.png" alt="..." class="slogan">
+    <!-- Atalho de acessibilidade para navegação rápida por teclado (WCAG 2.4.1) -->
+    <a href="#conteudo-principal" class="link-pular">Pular para o conteúdo principal</a>
+
+    <header>
+        <img src="img/logo.png" alt="Logotipo oficial do projeto Yby Py'a: Consciência Ecológica" class="logo">
+        <img src="img/slogan.png" alt="Slogan Yby Py'a: O coração da terra" class="slogan">
     </header>
-    <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="impacto.html">Impacto</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="noticias.html">Notícias</a></li>
-                <li><a href="curiosidades.html" class="ativo">Curiosidades</a></li>
-                <li><a href="guias.html">Guias</a></li>
-                <li><a href="localizacao.html">Locais</a></li>
-                <li><a href="contato.html">Saiba mais</a></li>
-                <li><a href="orcamento.html">Orçamento</a></li>
-            </ul>
-            <div class="indicador"></div>
-        </nav>
-    <main>
-        <h1>Curiosidades</h1>
-        <br>
-        <h2>Você sabia...</h2>
-    
-        <article>
-            <div>
-                <h2><b>Como fazer uma horta com materiais reaproveitados?</b></h2>
-            <p>
-                Muitos não sabem como fazer uma horta, mas ao contrário do que pensam, não há necessidade de comprar vasos. As grandes cidades são verdadeiros depósitos de materiais descartados. O chamado "lixo" pode ser uma riqueza para quem sabe observar e está disposto a recondicionar materiais. Vários tipos de resíduos podem ser reaproveitados, com benefícios tanto para a cidade, que fica mais limpa, quanto para o individuo e o seu bolso.
+
+    <nav class="navbar" aria-label="Menu principal de navegação">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="impacto.html">Impacto</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="curiosidades.html" class="ativo" aria-current="page">Curiosidades</a></li>
+            <li><a href="guias.html">Guias</a></li>
+            <li><a href="localizacao.html">Locais</a></li>
+            <li><a href="contato.html">Saiba mais</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li>
+        </ul>
+        <div class="indicador" aria-hidden="true"></div>
+    </nav>
+
+    <main id="conteudo-principal">
+        <header class="pagina-cabecalho">
+            <h1>Curiosidades &amp; Multimídia</h1>
+            <p class="subtitulo-pagina">
+                Explore fatos surpreendentes sobre o meio ambiente, entenda os ciclos dos materiais e descubra como pequenas atitudes diárias protegem o coração da Terra.
             </p>
-                <img src="img/curiosidade01.jpg" alt="Vários vasos de plantas feitos com garrafas plásticas cortadas e pintadas, penduradas em uma parede.">
-            
-                <a href="https://namu.com.br/portal/alimentacao/organica/como-fazer-uma-horta-com-materiais-reaproveitados/" target="_blank">Saiba mais!</a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <h2><b>Como funciona as cores na reciclagem?</b></h2>
-            <p>
-                Você já deve ter reparado que, em muitos espaços públicos, escolas e empresas, existem diferentes lixeiras de reciclagem coloridas lado a lado, não é mesmo?
+        </header>
 
-                Elas não estão ali por acaso: servem para nos ajudar a separar corretamente os resíduos e facilitar a coleta seletiva.
+        <!-- ==========================================================================
+             1. ESTRUTURA MULTIMÍDIA (HTML5 Semântico, WCAG e Responsividade)
+             ========================================================================== -->
+        <section class="secao-multimidia" id="multimidia" aria-labelledby="titulo-multimidia">
+            <div class="secao-cabecalho">
+                <span class="badge-secao">Central Audiovisual</span>
+                <h2 id="titulo-multimidia">Multimídia e Recursos Educativos</h2>
+                <p class="secao-descricao">
+                    Conteúdos em vídeo, áudio e recursos interativos especialmente preparados com acessibilidade completa (legendas, transcrições e controle por teclado via <kbd>Tab</kbd> e <kbd>Enter</kbd>).
+                </p>
+            </div>
 
-                Essa prática simples tem um impacto enorme na redução de desperdício e na destinação correta dos materiais, apoiando toda a cadeia de reciclagem na separação e triagem dos materiais recicláveis.
-            </p>    
-                <img src="img/curiosidade02.jpg" alt="Lixeiras de coleta seletiva em azul, verde e amarelo instalados sobr uma parede de tijolos.">
-            
-                <a href="https://eureciclo.com.br/blog/as-cores-das-lixeiras-de-reciclagem-como-funcionam-e-por-que-sao-importantes" target="_blank">Saiba mais!</a>
+            <div class="multimidia-grid">
+                <!-- REQUISITO 1: ELEMENTO DE VÍDEO COM POSTER, SOURCE, FALLBACK E LEGENDAS (WCAG) -->
+                <article class="midia-card card-video" aria-labelledby="titulo-video">
+                    <header class="midia-card-header">
+                        <span class="tag-midia tag-verde">Vídeo Educativo</span>
+                        <h3 id="titulo-video">Ciclo da Reciclagem e Economia Circular</h3>
+                        <p>
+                            Descubra como o reaproveitamento inteligente de materiais evita a extração predatória de recursos virgens e reduz a pegada de carbono.
+                        </p>
+                    </header>
+
+                    <div class="video-container">
+                        <video controls poster="img/poster-curiosidades.jpg" preload="metadata" aria-label="Vídeo educativo sobre o ciclo da reciclagem e sustentabilidade">
+                            <source src="midia/curiosidades.mp4" type="video/mp4">
+                            <track src="midia/curiosidades.vtt" kind="captions" srclang="pt-BR" label="Português" default>
+                            Seu navegador não oferece suporte à tag de vídeo HTML5. Você pode <a href="midia/curiosidades.mp4" download>baixar o arquivo de vídeo curiosidades.mp4</a> para assistir offline.
+                        </video>
+                    </div>
+
+                    <footer class="midia-card-footer">
+                        <p class="dica-acessibilidade">
+                            <span class="icone-acessibilidade" aria-hidden="true">⌨️</span>
+                            <strong>Navegação por teclado:</strong> Use a tecla <kbd>Tab</kbd> para selecionar o player e pressione <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para pausar ou reproduzir.
+                        </p>
+                        <details class="transcricao">
+                            <summary>Ver transcrição textual do vídeo</summary>
+                            <div class="transcricao-conteudo">
+                                <p>
+                                    <strong>Transcrição do vídeo:</strong> "Bem-vindo ao Yby Py'a: Conectando você ao coração da Terra. Você sabia que a reciclagem de uma única lata de alumínio economiza 95% da energia necessária para produzir uma nova? No Brasil, mais de 98% das latas de alumínio são recicladas, sendo um modelo internacional de economia circular. Separar corretamente plástico, papel, vidro e metal é essencial para evitar o acúmulo de resíduos e proteger ecossistemas. Adote o consumo consciente e participe da coleta seletiva na sua cidade. Juntos podemos transformar nosso futuro!"
+                                </p>
+                            </div>
+                        </details>
+                    </footer>
+                </article>
+
+                <!-- REQUISITO 2: ELEMENTO DE ÁUDIO COM CONTROLS, SOURCE E FALLBACK -->
+                <article class="midia-card card-audio" aria-labelledby="titulo-audio">
+                    <header class="midia-card-header">
+                        <span class="tag-midia tag-amarelo">Podcast / Áudio</span>
+                        <h3 id="titulo-audio">Minuto Sustentável: Curiosidades Ecológicas</h3>
+                        <p>
+                            Ouça este episódio rápido repleto de dados curiosos sobre a decomposição de materiais e dicas práticas para aplicar no seu dia a dia.
+                        </p>
+                    </header>
+
+                    <div class="audio-container">
+                        <div class="audio-visual" aria-hidden="true">
+                            <span class="audio-icone">🎙️</span>
+                            <div class="audio-barras">
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <audio controls preload="metadata" aria-label="Podcast educativo: Minuto Sustentável do projeto Yby Py'a">
+                            <source src="midia/curiosidades.mp3" type="audio/mpeg">
+                            Seu navegador não oferece suporte à tag de áudio HTML5. Você pode <a href="midia/curiosidades.mp3" download>baixar o arquivo de áudio curiosidades.mp3</a> para ouvir no seu player preferido.
+                        </audio>
+                    </div>
+
+                    <footer class="midia-card-footer">
+                        <p class="dica-acessibilidade">
+                            <span class="icone-acessibilidade" aria-hidden="true">⌨️</span>
+                            <strong>Navegação por teclado:</strong> Use a tecla <kbd>Tab</kbd> para focar no reprodutor de áudio e <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para ouvir ou pausar.
+                        </p>
+                        <details class="transcricao">
+                            <summary>Ver transcrição textual do áudio</summary>
+                            <div class="transcricao-conteudo">
+                                <p>
+                                    <strong>Transcrição do áudio:</strong> "Olá, ouvinte do Yby Py'a! Bem-vindo ao Minuto Sustentável. Você sabia que uma única sacola plástica pode levar mais de 400 anos para se decompor na natureza? E que o vidro é um dos poucos materiais 100% recicláveis infinitas vezes, sem perder pureza ou durabilidade? Pequenas mudanças de atitude, como recusar sacolas descartáveis e higienizar seus recipientes recicláveis antes do descarte, fazem uma diferença gigantesca no planeta. Cuide do coração da Terra. Yby Py'a!"
+                                </p>
+                            </div>
+                        </details>
+                    </footer>
+                </article>
+
+                <!-- REQUISITO 3: ELEMENTO IFRAME COM TITLE, WIDTH="100%", FRAMEBORDER="0" E ALLOWFULLSCREEN -->
+                <article class="midia-card card-iframe" aria-labelledby="titulo-iframe">
+                    <header class="midia-card-header">
+                        <span class="tag-midia tag-azul">Conteúdo Interativo</span>
+                        <h3 id="titulo-iframe">Vídeo Educativo: Como Funciona a Reciclagem</h3>
+                        <p>
+                            Assista ao material audiovisual complementar integrado diretamente do YouTube, com animações didáticas sobre a separação dos resíduos sólidos.
+                        </p>
+                    </header>
+
+                    <div class="iframe-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/9G3XlYjX5q8" title="Vídeo educativo do YouTube: Como funciona o processo da reciclagem e a separação correta de resíduos" width="100%" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy"></iframe>
+                    </div>
+
+                    <footer class="midia-card-footer">
+                        <p class="dica-acessibilidade">
+                            <span class="icone-acessibilidade" aria-hidden="true">⌨️</span>
+                            <strong>Navegação no player incorporado:</strong> Pressione <kbd>Tab</kbd> para navegar no reprodutor e acione os botões com <kbd>Enter</kbd> para ativar legendas nativas e controle de tela cheia.
+                        </p>
+                    </footer>
+                </article>
             </div>
-        </article>
-        <article>
-            <div>
-                <h2><b>O que é reciclagem?</b></h2>
-            <p>
-               A reciclagem é um ato de responsabilidade e consciência com o meio ambiente e com a sociedade. Pequenas ações, como separar corretamente os próprios resíduos, podem ter um impacto positivo relevante na preservação dos recursos naturais e contribuir para um futuro mais sustentável.
-            </p> 
-               <img src="img/curiosidade03.jpg" alt="Homem segurando uma caixa de papelão com o símbulo da reciclagem.">
-            
-                <a href="https://www.neoenergia.com/w/reciclagem-o-que-e-e-como-voce-pode-contribuir" target="_blank">Saiba mais!</a>
+        </section>
+
+        <!-- ==========================================================================
+             2. CURIOSIDADES EM TEXTO E IMAGENS (Conteúdo Informativo Mantido e Otimizado)
+             ========================================================================== -->
+        <section class="secao-curiosidades" aria-labelledby="titulo-voce-sabia">
+            <div class="secao-cabecalho">
+                <span class="badge-secao">Fatos &amp; Práticas</span>
+                <h2 id="titulo-voce-sabia">Você sabia...</h2>
+                <p class="secao-descricao">
+                    Dicas práticas, explicações e conhecimentos fundamentais sobre reciclagem, sustentabilidade e reaproveitamento de materiais.
+                </p>
             </div>
-        </article>
-            <article>
-                <div>
-                    <h2><b>Quais são os três pilares da sustentabilidade?</b></h2>
-                <p>
-                    A sustentabilidade é sustentada por três pilares fundamentais: ambiental, social e econômico. Cada um desses aspectos desempenha um papel na construção de um futuro sustentável e equilibrado.         
-                </p>    
-                    <img src="img/curiosidade04.jpg" alt="Composteira caseira feita com caixas plásticas empilhadas, com restos de alimentos e folhas secas dentro.">
-                
-                    <a href="https://blog.jacto.com.br/sustentabilidade-conceito/" target="_blank">Saiba mais!</a>
+
+            <article class="curiosidade-item">
+                <div class="curiosidade-texto">
+                    <h3>Como fazer uma horta com materiais reaproveitados?</h3>
+                    <p>
+                        Muitos não sabem como fazer uma horta, mas ao contrário do que pensam, não há necessidade de comprar vasos caros. As grandes cidades são verdadeiros depósitos de materiais descartados. O chamado "lixo" pode ser uma riqueza para quem sabe observar e está disposto a recondicionar materiais. Vários tipos de resíduos podem ser reaproveitados, com benefícios tanto para a cidade, que fica mais limpa, quanto para o indivíduo e o seu bolso. Garrafas PET, latas de alumínio e caixotes de madeira tornam-se canteiros perfeitos para hortaliças e temperos frescos.
+                    </p>
+                    <a href="https://namu.com.br/portal/alimentacao/organica/como-fazer-uma-horta-com-materiais-reaproveitados/" class="btn-saiba-mais" target="_blank" rel="noopener noreferrer">Saiba mais sobre hortas sustentáveis!</a>
+                </div>
+                <div class="curiosidade-img-wrap">
+                    <img src="img/curiosidade01.jpg" alt="Vários vasos de plantas feitos com garrafas plásticas cortadas e pintadas, penduradas em uma parede ensolarada.">
                 </div>
             </article>
 
+            <article class="curiosidade-item">
+                <div class="curiosidade-texto">
+                    <h3>Como funcionam as cores na reciclagem?</h3>
+                    <p>
+                        Você já deve ter reparado que, em muitos espaços públicos, escolas e empresas, existem diferentes lixeiras de reciclagem coloridas lado a lado, não é mesmo? Elas não estão ali por acaso: seguem um padrão internacional (CONAMA no Brasil) para nos ajudar a separar corretamente os resíduos e facilitar a coleta seletiva: azul para papel, vermelho para plástico, verde para vidro e amarelo para metal. Essa prática simples tem um impacto enorme na redução de desperdício e na destinação correta dos materiais, apoiando toda a cadeia de catadores e indústrias de triagem.
+                    </p>
+                    <a href="https://eureciclo.com.br/blog/as-cores-das-lixeiras-de-reciclagem-como-funcionam-e-por-que-sao-importantes" class="btn-saiba-mais" target="_blank" rel="noopener noreferrer">Saiba mais sobre o código de cores!</a>
+                </div>
+                <div class="curiosidade-img-wrap">
+                    <img src="img/curiosidade02.jpg" alt="Lixeiras de coleta seletiva nas cores azul, verde e amarelo instaladas sobre uma parede rústica de tijolos.">
+                </div>
+            </article>
+
+            <article class="curiosidade-item">
+                <div class="curiosidade-texto">
+                    <h3>O que é reciclagem?</h3>
+                    <p>
+                        A reciclagem é um ato de responsabilidade e consciência com o meio ambiente e com a sociedade. Trata-se do processo de transformação de resíduos que seriam descartados em novos produtos ou matérias-primas secundárias. Pequenas ações, como higienizar e separar corretamente os próprios resíduos, têm um impacto positivo relevante na preservação dos recursos naturais, na diminuição da poluição de rios e solos, e contribuem ativamente para a mitigação das mudanças climáticas globais.
+                    </p>
+                    <a href="https://www.neoenergia.com/w/reciclagem-o-que-e-e-como-voce-pode-contribuir" class="btn-saiba-mais" target="_blank" rel="noopener noreferrer">Saiba mais sobre o impacto da reciclagem!</a>
+                </div>
+                <div class="curiosidade-img-wrap">
+                    <img src="img/curiosidade03.jpg" alt="Homem segurando uma caixa de papelão com o símbolo internacional da reciclagem estampado em destaque.">
+                </div>
+            </article>
+
+            <article class="curiosidade-item">
+                <div class="curiosidade-texto">
+                    <h3>Quais são os três pilares da sustentabilidade?</h3>
+                    <p>
+                        A sustentabilidade é sustentada pelo conceito do <em>Triple Bottom Line</em>: o pilar ambiental, o social e o econômico. Nenhum projeto sobrevive isoladamente: a preservação do meio ambiente precisa conviver com a justiça e a dignidade humana nas comunidades, amparada por viabilidade financeira ética. Cada um desses aspectos desempenha um papel determinante na construção de um futuro sustentável e equilibrado para as próximas gerações.
+                    </p>
+                    <a href="https://blog.jacto.com.br/sustentabilidade-conceito/" class="btn-saiba-mais" target="_blank" rel="noopener noreferrer">Saiba mais sobre os pilares sustentáveis!</a>
+                </div>
+                <div class="curiosidade-img-wrap">
+                    <img src="img/curiosidade04.jpg" alt="Composteira caseira feita com caixas plásticas empilhadas, contendo matéria orgânica e folhas secas em decomposição natural.">
+                </div>
+            </article>
+        </section>
     </main>
+
     <footer>
-        <p>
-            © 2026 | Todos os direitos reservados.
-        </p>
+        <p>© 2026 Yby Py'a | Todos os direitos reservados. Promovendo a consciência ecológica e o coração da Terra.</p>
     </footer>
+
     <script src="JS/navbar.js"></script>
 </body>
 </html>
