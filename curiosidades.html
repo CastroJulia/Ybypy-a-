@@ -43,57 +43,45 @@
         <!-- ==========================================================================
              1. ESTRUTURA MULTIMÍDIA (HTML5 Semântico, WCAG e Responsividade)
              ========================================================================== -->
-        <section class="secao-multimidia" id="multimidia" aria-labelledby="titulo-multimidia">
-            <div class="secao-cabecalho">
+        <section class="secao-multimidia midia-container" id="multimidia" aria-labelledby="titulo-multimidia">
+            <div class="secao-cabecalho caixa-verde-superior">
                 <span class="badge-secao">Central Audiovisual</span>
                 <h2 id="titulo-multimidia">Multimídia e Recursos Educativos</h2>
                 <p class="secao-descricao">
-                    Conteúdos em vídeo, áudio e recursos interativos especialmente preparados com acessibilidade completa (legendas, transcrições e controle por teclado via <kbd>Tab</kbd> e <kbd>Enter</kbd>).
+                    Conteúdos audiovisuais e interativos selecionados com acessibilidade completa (legendas integradas, títulos descritivos e controle por teclado via <kbd>Tab</kbd> e <kbd>Enter</kbd>).
                 </p>
             </div>
 
-            <div class="multimidia-grid">
-                <!-- REQUISITO 1: ELEMENTO DE VÍDEO COM POSTER, SOURCE, FALLBACK E LEGENDAS (WCAG) -->
+            <div class="multimidia-grid midia-grid midia-container-grid">
+                <!-- REQUISITO 1: VÍDEO 1 - IMPORTÂNCIA DA RECICLAGEM -->
                 <article class="midia-card card-video" aria-labelledby="titulo-video">
-                    <header class="midia-card-header">
+                    <header class="midia-card-header caixa-verde-superior">
                         <span class="tag-midia tag-verde">Vídeo Educativo</span>
-                        <h3 id="titulo-video">Ciclo da Reciclagem e Economia Circular</h3>
+                        <h3 id="titulo-video">Importância da Reciclagem</h3>
                         <p>
-                            Descubra como o reaproveitamento inteligente de materiais evita a extração predatória de recursos virgens e reduz a pegada de carbono.
+                            Compreenda a importância vital da reciclagem para a preservação ambiental, economia de recursos e redução do lixo nas cidades.
                         </p>
                     </header>
 
-                    <div class="video-container">
-                        <video controls poster="img/poster-curiosidades.jpg" preload="metadata" aria-label="Vídeo educativo sobre o ciclo da reciclagem e sustentabilidade">
-                            <source src="midia/curiosidades.mp4" type="video/mp4">
-                            <track src="midia/curiosidades.vtt" kind="captions" srclang="pt-BR" label="Português" default>
-                            Seu navegador não oferece suporte à tag de vídeo HTML5. Você pode <a href="midia/curiosidades.mp4" download>baixar o arquivo de vídeo curiosidades.mp4</a> para assistir offline.
-                        </video>
+                    <div class="iframe-container">
+                        <iframe width="100%" height="215" src="https://www.youtube.com/embed/ITur0JNJZos" title="IMPORTÂNCIA DA RECICLAGEM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
                     <footer class="midia-card-footer">
                         <p class="dica-acessibilidade">
                             <span class="icone-acessibilidade" aria-hidden="true">⌨️</span>
-                            <strong>Navegação por teclado:</strong> Use a tecla <kbd>Tab</kbd> para selecionar o player e pressione <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para pausar ou reproduzir.
+                            <strong>Navegação por teclado:</strong> Pressione <kbd>Tab</kbd> para selecionar o player do YouTube e use <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para controlar a reprodução com legendas integradas.
                         </p>
-                        <details class="transcricao">
-                            <summary>Ver transcrição textual do vídeo</summary>
-                            <div class="transcricao-conteudo">
-                                <p>
-                                    <strong>Transcrição do vídeo:</strong> "Bem-vindo ao Yby Py'a: Conectando você ao coração da Terra. Você sabia que a reciclagem de uma única lata de alumínio economiza 95% da energia necessária para produzir uma nova? No Brasil, mais de 98% das latas de alumínio são recicladas, sendo um modelo internacional de economia circular. Separar corretamente plástico, papel, vidro e metal é essencial para evitar o acúmulo de resíduos e proteger ecossistemas. Adote o consumo consciente e participe da coleta seletiva na sua cidade. Juntos podemos transformar nosso futuro!"
-                                </p>
-                            </div>
-                        </details>
                     </footer>
                 </article>
 
-                <!-- REQUISITO 2: ELEMENTO DE ÁUDIO COM CONTROLS, SOURCE E FALLBACK -->
+                <!-- REQUISITO 2: PODCAST / ÁUDIO EDUCATIVO (PLAYER ORIGINAL INTACTO COM AUDIO CONTROLS) -->
                 <article class="midia-card card-audio" aria-labelledby="titulo-audio">
-                    <header class="midia-card-header">
+                    <header class="midia-card-header caixa-verde-superior">
                         <span class="tag-midia tag-amarelo">Podcast / Áudio</span>
                         <h3 id="titulo-audio">Minuto Sustentável: Curiosidades Ecológicas</h3>
                         <p>
-                            Ouça este episódio rápido repleto de dados curiosos sobre a decomposição de materiais e dicas práticas para aplicar no seu dia a dia.
+                            Ouça este episódio educativo repleto de orientações sobre a separação correta de resíduos domésticos e sustentabilidade.
                         </p>
                     </header>
 
@@ -105,39 +93,32 @@
                             </div>
                         </div>
                         <audio controls preload="metadata" aria-label="Podcast educativo: Minuto Sustentável do projeto Yby Py'a">
+                            <source src="https://jornal.usp.br/wp-content/uploads/2026/05/SAUDE-E-MEIO-AMBIENTE_01-06-26_PAULO-SALDIVA.mp3" type="audio/mpeg">
                             <source src="midia/curiosidades.mp3" type="audio/mpeg">
-                            Seu navegador não oferece suporte à tag de áudio HTML5. Você pode <a href="midia/curiosidades.mp3" download>baixar o arquivo de áudio curiosidades.mp3</a> para ouvir no seu player preferido.
+                            Seu navegador não oferece suporte à tag de áudio HTML5. Ouça o <a href="https://jornal.usp.br/wp-content/uploads/2026/05/SAUDE-E-MEIO-AMBIENTE_01-06-26_PAULO-SALDIVA.mp3" target="_blank" rel="noopener noreferrer">áudio em MP3</a>.
                         </audio>
                     </div>
 
                     <footer class="midia-card-footer">
                         <p class="dica-acessibilidade">
                             <span class="icone-acessibilidade" aria-hidden="true">⌨️</span>
-                            <strong>Navegação por teclado:</strong> Use a tecla <kbd>Tab</kbd> para focar no reprodutor de áudio e <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para ouvir ou pausar.
+                            <strong>Navegação por teclado:</strong> Use a tecla <kbd>Tab</kbd> para focar no reprodutor de áudio e acione <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para ouvir ou pausar.
                         </p>
-                        <details class="transcricao">
-                            <summary>Ver transcrição textual do áudio</summary>
-                            <div class="transcricao-conteudo">
-                                <p>
-                                    <strong>Transcrição do áudio:</strong> "Olá, ouvinte do Yby Py'a! Bem-vindo ao Minuto Sustentável. Você sabia que uma única sacola plástica pode levar mais de 400 anos para se decompor na natureza? E que o vidro é um dos poucos materiais 100% recicláveis infinitas vezes, sem perder pureza ou durabilidade? Pequenas mudanças de atitude, como recusar sacolas descartáveis e higienizar seus recipientes recicláveis antes do descarte, fazem uma diferença gigantesca no planeta. Cuide do coração da Terra. Yby Py'a!"
-                                </p>
-                            </div>
-                        </details>
                     </footer>
                 </article>
 
-                <!-- REQUISITO 3: ELEMENTO IFRAME COM TITLE, WIDTH="100%", FRAMEBORDER="0" E ALLOWFULLSCREEN -->
+                <!-- REQUISITO 3: VÍDEO 2 - COMO RECICLAR / O SHOW DA LUNA -->
                 <article class="midia-card card-iframe" aria-labelledby="titulo-iframe">
-                    <header class="midia-card-header">
-                        <span class="tag-midia tag-azul">Conteúdo Interativo</span>
-                        <h3 id="titulo-iframe">Vídeo Educativo: Como Funciona a Reciclagem</h3>
+                    <header class="midia-card-header caixa-verde-superior">
+                        <span class="tag-midia tag-azul">Conteúdo Educativo</span>
+                        <h3 id="titulo-iframe">Aprenda com Luna: Reciclagem</h3>
                         <p>
-                            Assista ao material audiovisual complementar integrado diretamente do YouTube, com animações didáticas sobre a separação dos resíduos sólidos.
+                            Assista a este episódio educativo e didático de O Show da Luna sobre a separação correta e a reciclagem dos resíduos.
                         </p>
                     </header>
 
                     <div class="iframe-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/9G3XlYjX5q8" title="Vídeo educativo do YouTube: Como funciona o processo da reciclagem e a separação correta de resíduos" width="100%" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy"></iframe>
+                        <iframe width="100%" height="215" src="https://www.youtube.com/embed/KAh9JQQkNm0" title="♻️ RECICLAGEM 👩🏫 l Aprenda com Luna - O Show da Luna!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
                     <footer class="midia-card-footer">
@@ -217,7 +198,7 @@
     </main>
 
     <footer>
-        <p>© 2026 Yby Py'a | Todos os direitos reservados. Promovendo a consciência ecológica e o coração da Terra.</p>
+        <p>© 2026 Yby Py'a | Todos os direitos reservados.</p>
     </footer>
 
     <script src="JS/navbar.js"></script>
