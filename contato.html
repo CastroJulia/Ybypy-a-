@@ -9,10 +9,7 @@
 </head>
 <body>
     <header>
-         
-            <img src="img/logo.png" alt="Logotipo do projeto Yby Py'a" class="logo">
-         
-         
+         <img src="img/logo.png" alt="Logotipo do projeto Yby Py'a" class="logo">
          <img src="img/slogan.png" alt="Slogan do projeto Yby Py'a" class="slogan">
     </header>
     <nav class="navbar" aria-label="Navegação principal">
@@ -44,12 +41,12 @@
                     <form id="formContato" class="contato" action="formulario.php" method="post" enctype="multipart/form-data">
                         <label for="nome">
                             Seu nome: <br>
-                            <input id="nome" class="resp" type="text" name="Nvisitante" maxlength="80" placeholder="Ex: Maju" required aria-required="true">
+                            <input id="nome" class="resp" type="text" name="Nvisitante" maxlength="80" placeholder="Ex: Maju" required aria-required="true" pattern="[A-Za-zÀ-ÿ\s]+" title="Por favor, digite apenas letras e espaços no seu nome.">
                         </label>
                         <br><br>
                         <label for="email">
                             Email: <br>
-                            <input id="email" class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required aria-required="true">
+                            <input id="email" class="resp" type="email" name="email" maxlength="100" placeholder="Ex: maju@email.com" required aria-required="true" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Insira um e-mail válido contendo '@' e domínio com ponto (ex: usuario@email.com).">
                         </label>
                         <label class="check" for="receberemails">
                             <input id="receberemails" type="checkbox" name="receberemails" value="sim">
@@ -58,7 +55,7 @@
                         <br><br><br>
                         <label for="telefone">
                             Telefone: <br>
-                            <input id="telefone" class="resp" type="tel" name="telefone" maxlength="15" placeholder="Ex: (11) 99999-9999">
+                            <input id="telefone" class="resp" type="tel" name="telefone" maxlength="15" placeholder="Ex: (11) 99999-9999" pattern="^[0-9()\s-]+$" title="Digite apenas números, DDD, parênteses e traços no telefone.">
                         </label>
                         <br><br>
                         <label for="mensagem">
