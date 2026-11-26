@@ -3,8 +3,19 @@ const modal = document.getElementById('myModal');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    modal.showModal();
-    form.reset();
+    e.stopPropagation();
+
+    // Valida o formulário nativamente
+    if (form.checkValidity()) {
+        modal.showModal();
+        form.reset();
+    } else {
+        form.reportValidity();
+    }
 });
 
-document.getElementById('closeModal').addEventListener('click', () => modal.close());
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        modal.close();
+    });
+}
