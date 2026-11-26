@@ -1,24 +1,25 @@
-const form = document.getElementById('formContato');
-const modal = document.getElementById('myModal');
-const closeModalBtn = document.getElementById('closeModal');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('formContato');
+    const modal = document.getElementById('myModal');
+    const btnEnviar = document.getElementById('btnEnviar');
+    const closeModalBtn = document.getElementById('closeModal');
 
-if (form && modal) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    if (btnEnviar && form && modal) {
+        btnEnviar.addEventListener('click', () => {
+            // Verifica a validação dos padrões (Nome, E-mail e Telefone)
+            if (form.checkValidity()) {
+                modal.showModal();
+                form.reset();
+            } else {
+                // Exibe os alertas visuais de campo inválido nativos do navegador
+                form.reportValidity();
+            }
+        });
+    }
 
-        // Valida as regras nativas de pattern (nome, email e telefone)
-        if (form.checkValidity()) {
-            modal.showModal();
-            form.reset();
-        } else {
-            form.reportValidity();
-        }
-    });
-}
-
-if (closeModalBtn && modal) {
-    closeModalBtn.addEventListener('click', () => {
-        modal.close();
-    });
-}
+    if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.close();
+        });
+    }
+});

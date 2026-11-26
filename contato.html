@@ -38,7 +38,7 @@
             <br><br>
             <article class="formulario contato">
                 <div>
-                    <form id="formContato" class="contato" onsubmit="return false;">
+                    <form id="formContato" class="contato">
                         <label for="nome">
                             Seu nome: <br>
                             <input id="nome" class="resp" type="text" name="Nvisitante" maxlength="80" placeholder="Ex: Maju" required aria-required="true" pattern="[A-Za-zÀ-ÿ\s]+" title="Por favor, digite apenas letras e espaços no seu nome.">
@@ -63,7 +63,7 @@
                             <textarea id="mensagem" class="resp" name="mensagem" rows="5" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
                         </label>
                         <br><br>
-                        <input class="botao" type="submit" value="Enviar">
+                        <button type="button" id="btnEnviar" class="botao">Enviar</button>
                     </form>
                 </div>
             </article>
