@@ -90,10 +90,10 @@ header {
 
 .navbar {
     position: relative;
-    width: 90%;
+    width: 95%;
     max-width: 1280px;
     margin: 20px auto;
-    padding: 12px 16px;
+    padding: 8px 12px;
     background-color: #0040a9;
     border-radius: 60px;
     backdrop-filter: blur(10px);
@@ -107,20 +107,26 @@ header {
     position: relative;
     z-index: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     margin: 0;
     padding: 0;
     list-style: none;
     flex-wrap: nowrap;
+    width: 100%;
+}
+
+.navbar li {
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 .navbar a {
     display: block;
-    padding: 8px 14px;
-    font-size: 15px;
-    line-height: normal;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 1.2;
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -133,10 +139,11 @@ header {
 
 .navbar a:hover,
 .navbar a.ativo {
-    color: #0040a9;
+    color: #048b04;
 }
 
 .navbar a:hover {
+    color: #0020af;
     transform: translateY(-2px);
 }
 
@@ -655,25 +662,33 @@ footer p {
     font-size: 0.95rem;
 }
 
-@media (min-width: 1024px) and (max-width: 1400px) {
+@media (min-width: 1300px) {
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1299px) {
     .navbar {
-        width: 95%;
-        max-width: 1250px;
-        padding: 10px 12px;
+        width: 98%;
+        max-width: 1280px;
+        padding: 6px 8px;
     }
 
     .navbar ul {
-        gap: 3px;
+        gap: 1px;
         flex-wrap: nowrap;
     }
 
     .navbar a {
-        padding: 8px 10px;
-        font-size: 13.5px;
+        padding: 6px 6px;
+        font-size: 13px;
+        letter-spacing: -0.2px;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     main {
         width: 95%;
         padding: 20px 10px;
@@ -734,19 +749,20 @@ footer p {
     }
 
     .navbar {
-        width: 95%;
+        width: 98%;
         border-radius: 30px;
-        padding: 10px 8px;
+        padding: 8px 6px;
     }
 
     .navbar ul {
         flex-wrap: wrap;
         gap: 4px;
+        justify-content: center;
     }
 
     .navbar a {
         padding: 6px 10px;
-        font-size: 13px;
+        font-size: 12.5px;
     }
 
     .indicador {
