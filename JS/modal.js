@@ -1,20 +1,23 @@
 const form = document.getElementById('formContato');
 const modal = document.getElementById('myModal');
+const closeModalBtn = document.getElementById('closeModal');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+if (form && modal) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-    // Valida o formulário nativamente
-    if (form.checkValidity()) {
-        modal.showModal();
-        form.reset();
-    } else {
-        form.reportValidity();
-    }
-});
+        // Valida as regras nativas de pattern (nome, email e telefone)
+        if (form.checkValidity()) {
+            modal.showModal();
+            form.reset();
+        } else {
+            form.reportValidity();
+        }
+    });
+}
 
-if (closeModalBtn) {
+if (closeModalBtn && modal) {
     closeModalBtn.addEventListener('click', () => {
         modal.close();
     });
