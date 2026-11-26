@@ -4,9 +4,6 @@
    Acessibilidade: WCAG 2.1 AA | Responsividade Completa (Mobile First / Fluido)
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. RESET E CONFIGURAÇÕES GLOBAIS
-   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -28,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Link de Salto para Acessibilidade por Teclado (WCAG 2.4.1) */
 .link-pular {
     position: absolute;
     top: -9999px;
@@ -51,7 +47,6 @@ body {
     outline-offset: 2px;
 }
 
-/* Indicadores de Foco Visível para Navegação por Teclado (WCAG 2.4.7) */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
@@ -63,9 +58,6 @@ iframe:focus-visible {
     border-radius: 6px;
 }
 
-/* --------------------------------------------------------------------------
-   2. CABEÇALHO (HEADER) E IDENTIDADE VISUAL
-   -------------------------------------------------------------------------- */
 header {
     background-color: #8edd65;
     text-align: center;
@@ -96,15 +88,12 @@ header {
     justify-self: center;
 }
 
-/* --------------------------------------------------------------------------
-   3. NAVEGAÇÃO PRINCIPAL (.navbar)
-   -------------------------------------------------------------------------- */
 .navbar {
     position: relative;
-    width: 85%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1280px;
     margin: 20px auto;
-    padding: 12px 20px;
+    padding: 12px 16px;
     background-color: #0040a9;
     border-radius: 60px;
     backdrop-filter: blur(10px);
@@ -120,16 +109,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     margin: 0;
     padding: 0;
     list-style: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .navbar a {
     display: block;
-    padding: 10px 18px;
+    padding: 8px 14px;
     font-size: 15px;
     line-height: normal;
     color: #ffffff;
@@ -139,6 +128,7 @@ header {
     text-align: center;
     background: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
 }
 
 .navbar a:hover,
@@ -171,9 +161,6 @@ header {
     pointer-events: none;
 }
 
-/* --------------------------------------------------------------------------
-   4. CONTEÚDO PRINCIPAL E TIPOGRAFIA GERAL
-   -------------------------------------------------------------------------- */
 main {
     padding: 30px 15px;
     width: 90%;
@@ -202,9 +189,6 @@ h1 {
     line-height: 1.5;
 }
 
-/* --------------------------------------------------------------------------
-   5. SEÇÃO MULTIMÍDIA E GRID DE CARDS (.midia-container)
-   -------------------------------------------------------------------------- */
 .secao-multimidia,
 .midia-container {
     width: 100%;
@@ -218,7 +202,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Caixa Superior / Cabeçalho da Seção Multimídia */
 .secao-cabecalho,
 .caixa-verde-superior {
     text-align: center;
@@ -259,7 +242,6 @@ h1 {
     overflow-wrap: break-word;
 }
 
-/* Grade de 3 Colunas dos Cards Principais */
 .multimidia-grid,
 .midia-grid,
 .midia-container-grid {
@@ -271,9 +253,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* --------------------------------------------------------------------------
-   6. CARDS DE MÍDIA (.midia-card)
-   -------------------------------------------------------------------------- */
 .midia-card {
     background-color: #ffffff;
     border: 1.5px solid #d7eed3;
@@ -286,7 +265,7 @@ h1 {
     gap: 1.25rem;
     box-shadow: 0 4px 14px rgba(0, 79, 89, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 0; /* Impede transbordo em grids */
+    min-width: 0;
     width: 100%;
     box-sizing: border-box;
 }
@@ -297,18 +276,17 @@ h1 {
 }
 
 .card-video {
-    border-top-color: #8edd65; /* Verde Yby Py'a */
+    border-top-color: #8edd65;
 }
 
 .card-audio {
-    border-top-color: #f4d03f; /* Amarelo Sustentável */
+    border-top-color: #f4d03f;
 }
 
 .card-iframe {
-    border-top-color: #0040a9; /* Azul Institucional */
+    border-top-color: #0040a9;
 }
 
-/* Cabeçalho do Card (Caixa Verde Superior Interna com flex-direction: column) */
 .midia-card-header {
     display: flex;
     flex-direction: column;
@@ -322,7 +300,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Tags de identificação dos tipos de mídia */
 .tag-midia {
     display: inline-block;
     font-size: 11px;
@@ -353,7 +330,6 @@ h1 {
     border: 1px solid #0040a9;
 }
 
-/* Título H3 Reduzido para Eliminar Layout Espremido */
 .midia-card-header h3,
 .midia-card h3 {
     color: #01342d;
@@ -367,7 +343,6 @@ h1 {
     width: 100%;
 }
 
-/* Texto Explicativo com line-height: 1.4 e Sem Transbordo */
 .midia-card-header p,
 .midia-card p {
     font-size: 0.95rem;
@@ -380,11 +355,6 @@ h1 {
     width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   7. REPRODUTORES RESPONSIVOS (VÍDEO, ÁUDIO E IFRAME - 100% E ALTURA PROPORCIONAL)
-   -------------------------------------------------------------------------- */
-
-/* Contêiner de Proporção 16:9 para Vídeo e Iframe */
 .video-container,
 .iframe-container {
     position: relative;
@@ -399,11 +369,10 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Suporte de fallback para navegadores antigos sem aspect-ratio nativo */
 @supports not (aspect-ratio: 16 / 9) {
     .video-container,
     .iframe-container {
-        padding-top: 56.25%; /* Proporção 16:9 */
+        padding-top: 56.25%;
         height: 0;
     }
     .video-container video,
@@ -414,7 +383,6 @@ h1 {
     }
 }
 
-/* Regras de Vídeo 100% Responsivo */
 .video-container video {
     width: 100%;
     height: 100%;
@@ -425,7 +393,6 @@ h1 {
     border: 0;
 }
 
-/* Regras de Iframe 100% Responsivo */
 .iframe-container iframe,
 .video-container iframe,
 iframe {
@@ -437,7 +404,6 @@ iframe {
     border-radius: 8px;
 }
 
-/* Contêiner Responsivo para Áudio */
 .audio-container {
     width: 100%;
     max-width: 100%;
@@ -502,9 +468,6 @@ iframe {
     border-radius: 24px;
 }
 
-/* --------------------------------------------------------------------------
-   8. RECURSOS DE ACESSIBILIDADE (WCAG 2.1)
-   -------------------------------------------------------------------------- */
 .midia-card-footer {
     display: flex;
     flex-direction: column;
@@ -538,7 +501,6 @@ kbd {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Transcrições Textuais Acessíveis (<details>) */
 .transcricao {
     border: 1px solid #cde4ce;
     border-radius: 6px;
@@ -588,9 +550,6 @@ kbd {
     overflow-wrap: break-word;
 }
 
-/* --------------------------------------------------------------------------
-   9. SEÇÃO DE CURIOSIDADES EM TEXTO E IMAGEM
-   -------------------------------------------------------------------------- */
 .secao-curiosidades {
     margin-top: 50px;
     width: 100%;
@@ -678,9 +637,6 @@ kbd {
     box-shadow: 0 5px 12px rgba(1, 52, 45, 0.3);
 }
 
-/* --------------------------------------------------------------------------
-   10. RODAPÉ (FOOTER)
-   -------------------------------------------------------------------------- */
 footer {
     background-color: #8edd65;
     color: #01342d;
@@ -699,11 +655,24 @@ footer p {
     font-size: 0.95rem;
 }
 
-/* --------------------------------------------------------------------------
-   11. RESPONSIVIDADE E MEDIA QUERIES
-   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1400px) {
+    .navbar {
+        width: 95%;
+        max-width: 1250px;
+        padding: 10px 12px;
+    }
 
-/* Telas Médias / Tablets (max-width: 992px) */
+    .navbar ul {
+        gap: 3px;
+        flex-wrap: nowrap;
+    }
+
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 13.5px;
+    }
+}
+
 @media (max-width: 992px) {
     main {
         width: 95%;
@@ -745,7 +714,6 @@ footer p {
     }
 }
 
-/* Telas Pequenas / Tablets menores e Smartphones (max-width: 768px) */
 @media (max-width: 768px) {
     header {
         grid-template-columns: 1fr 1fr;
@@ -768,12 +736,21 @@ footer p {
     .navbar {
         width: 95%;
         border-radius: 30px;
-        padding: 10px 12px;
+        padding: 10px 8px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 4px;
     }
 
     .navbar a {
-        padding: 8px 12px;
-        font-size: 13.5px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .indicador {
+        display: none;
     }
 
     .curiosidade-item {
@@ -798,7 +775,6 @@ footer p {
     }
 }
 
-/* Smartphones / Telas Estreitas (max-width: 480px) */
 @media (max-width: 480px) {
     header {
         grid-template-columns: 1fr;
